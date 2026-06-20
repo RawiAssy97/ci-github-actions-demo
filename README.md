@@ -1,6 +1,65 @@
 # CI GitHub Actions Demo
 
-This repository is used to practice GitHub Actions.
+This repository was created as part of a GitHub Actions homework assignment.
 
-It will include simple CI workflows that run automatically when code is pushed to GitHub.
+The goal of this project is to practice creating GitHub Actions workflows for basic CI tasks, running Python tests, using scheduled workflows, and running matrix builds.
 
+## Project Files
+
+* `main.py` - contains a simple Python function.
+* `test_main.py` - contains unit tests using the Python `unittest` framework.
+* `.github/workflows/` - contains the GitHub Actions workflow files.
+
+## Workflows Implemented
+
+### Task 1: Basic GitHub Actions Workflow
+
+A basic workflow that runs when code is pushed to the repository.
+
+The workflow checks out the code and prints:
+
+```text
+Hello, CI with GitHub Actions!
+```
+
+### Task 2: Running Python Tests
+
+A workflow that sets up Python 3.9 and runs unit tests using `unittest`.
+
+The workflow steps are:
+
+1. Check out the code.
+2. Set up Python 3.9.
+3. Install dependencies.
+4. Run the tests.
+
+### Task 3: Scheduled Workflow
+
+A scheduled workflow that runs every day at midnight UTC using cron syntax:
+
+```text
+0 0 * * *
+```
+
+The workflow prints:
+
+```text
+Scheduled build completed successfully!
+```
+
+### Task 4: Matrix Builds
+
+A matrix workflow that runs the Python unit tests on multiple Python versions:
+
+* Python 3.7
+* Python 3.8
+* Python 3.9
+* Python 3.10
+
+The workflow uses `ubuntu-22.04` to support Python 3.7 and uses `fail-fast: false` so all matrix jobs can run even if one version fails.
+
+## How to View Workflow Results
+
+Workflow runs can be viewed in the **Actions** tab of this GitHub repository.
+
+All workflows were tested successfully before submission.
