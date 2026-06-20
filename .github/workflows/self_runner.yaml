@@ -1,0 +1,19 @@
+name: Self Hosted Runner Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  self_hosted_job:
+    runs-on: [self-hosted, linux, x64]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Print runner info
+        run: |
+          echo "Running on a self-hosted runner"
+          hostname
+          pwd
+          ls -la
