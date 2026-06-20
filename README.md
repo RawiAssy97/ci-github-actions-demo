@@ -63,3 +63,30 @@ The workflow uses `ubuntu-22.04` to support Python 3.7 and uses `fail-fast: fals
 Workflow runs can be viewed in the **Actions** tab of this GitHub repository.
 
 All workflows were tested successfully before submission.
+
+## Bonus Task: Self-Hosted Runner
+
+For the optional bonus task, I configured a self-hosted GitHub Actions runner.
+
+A self-hosted runner allows GitHub Actions workflows to run on my own machine instead of using a GitHub-hosted runner such as `ubuntu-latest`.
+
+### Setup Process
+
+1. Opened the GitHub repository.
+2. Went to **Settings → Actions → Runners**.
+3. Clicked **New self-hosted runner**.
+4. Selected the operating system and architecture.
+5. Followed the commands provided by GitHub to download and configure the runner.
+6. Started the runner from the terminal.
+7. Created a workflow that uses:
+
+```yaml
+runs-on: [self-hosted, linux, x64]
+```
+
+### Workflow Result
+
+The self-hosted runner workflow was executed manually using `workflow_dispatch`.
+
+The workflow successfully ran on my local machine and printed a confirmation message in the GitHub Actions logs.
+
